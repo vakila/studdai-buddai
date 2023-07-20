@@ -9,6 +9,7 @@ const NAME = faker.person.firstName();
 export default function App() {
   const messages = useQuery(api.messages.list);
   const sendMessage = useMutation(api.messages.send);
+  const likeMessage = useMutation(api.messages.like);
 
   const [newMessageText, setNewMessageText] = useState("");
 
