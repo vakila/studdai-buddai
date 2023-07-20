@@ -32,7 +32,16 @@ export default function App() {
         >
           <div>{message.author}</div>
 
-          <p>{message.body}</p>
+          <p>
+            {message.body}
+            <button
+              onClick={async () => {
+                await likeMessage({ liker: NAME, messageId: message._id });
+              }}
+            >
+              🤍
+            </button>
+          </p>
         </article>
       ))}
       <form
