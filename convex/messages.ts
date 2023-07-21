@@ -6,8 +6,21 @@ export const list = query({
   handler: async (ctx) => {
     // Grab the most recent messages.
     const messages = await ctx.db.query("messages").order("desc").take(100);
-
-    return messages.reverse();
+    const messagesWithLikes = await Promise.all(
+      messages.map(async (message) => {
+        // Find the likes for each message
+        const likes = await ctx.db
+          .query("likes")
+          .withIndex("by_messageId", (q) => q.eq("messageId", message._id))
+          .collect();
+        // Join the count of likes with the message data
+        return {
+          ...message,
+          likes: likes.length,
+        };
+      })
+    );
+    return messagesWithLikes.reverse();
   },
 });
 
