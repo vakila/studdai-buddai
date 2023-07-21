@@ -39,7 +39,7 @@ export default function App() {
                 await likeMessage({ liker: NAME, messageId: message._id });
               }}
             >
-              🤍
+              {message.likes ? <span>{message.likes}</span> : null} 🤍
             </button>
           </p>
         </article>
