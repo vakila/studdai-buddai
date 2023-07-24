@@ -33,7 +33,7 @@ export const send = mutation({
 
     if (args.body.startsWith("@gpt")) {
       // Schedule the chat Action to run immediately
-      ctx.scheduler.runAfter(0, api.openai.chat, {
+      await ctx.scheduler.runAfter(0, api.openai.chat, {
         messageBody: args.body,
       });
     }
