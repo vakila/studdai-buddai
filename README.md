@@ -1,18 +1,22 @@
-# Convex Tour Chat
+# Studdai Buddai
 
-This is a sample app used in the convex tutorial to show off the fundamentals
-of the Convex platform.
+## Friends don't let friends learn alone 💞
 
-[Go check out the tutorial](https://convex.dev/start)
+Kick your study sessions up a notch with:
+- your own private study club in a group chat
+- GPT-powered AI agents who are always there for you
+- Option to invite other humans to the chat too
 
-Jump into any particular step of the tutorial with a branch:
 
- 1. Simple chat app with message display order bug (branch = main, 0-start)
- 1. Simple chat app with correct message display (branch = 1-bugfix)
- 1. Enhanced chat app a "likes" feature added (branch = 2-likes)
- 1. Enhanced chat app with a GPT integration (branch = 3-gpt)
+## Run your own version
 
-# To run
-
+    $ git clone git@github.com:vakila/studdai-buddai
+    $ cd studdai-buddai
     $ npm i
     $ npm run dev
+
+## Built with
+
+- Vite
+- React
+- [Convex](https://convex.dev/start)
